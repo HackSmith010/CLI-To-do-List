@@ -28,13 +28,13 @@ A simple and fast command-line application for managing your daily tasks. This p
 1.  **Clone the repository** to your local machine:
 
     ```bash
-    git clone <your-repository-url>
+    git clone https://github.com/HackSmith010/CLI-To-do-List.git
     ```
 
 2.  **Navigate into the project directory**:
 
     ```bash
-    cd <repository-name>
+    cd CLI-To-do-List
     ```
 
 3.  **Create a virtual environment and install dependencies** using `uv`. This command reads the `pyproject.toml` and `uv.lock` files to create a consistent environment.
