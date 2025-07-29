@@ -1,0 +1,18 @@
+[
+    {
+        "task": "Finish the command-line to-do list project",
+        "status": "pending"
+    },
+    {
+        "task": "Buy groceries for the week",
+        "status": "pending"
+    },
+    {
+        "task": "Read one chapter of a Python book",
+        "status": "done"
+    },
+    {
+        "task": "Drink water",
+        "status": "done"
+    }
+]
