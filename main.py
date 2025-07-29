@@ -6,15 +6,12 @@ TASKS_FILE = "tasks.json"
 def load_task():
     try:
         with open(TASKS_FILE, "r") as f:
-            print("File loaded successfully")
             return json.load(f)
     
     except FileNotFoundError:
-        print("File doesn't exist")
         return []
     
     except json.JSONDecodeError:
-        print("File is empty")
         return []
 
 def view_tasks(tasks):
