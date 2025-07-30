@@ -4,21 +4,17 @@ import sys
 TASKS_FILE = "tasks.json"
 
 def load_tasks():
-    """Loads tasks from the tasks.json file."""
     try:
         with open(TASKS_FILE, "r") as f:
             return json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
-        # Return an empty list if file doesn't exist or is empty/corrupted
         return []
 
 def save_tasks(tasks):
-    """Saves the list of tasks to the tasks.json file."""
     with open(TASKS_FILE, 'w') as f:
         json.dump(tasks, f, indent=4)
 
 def view_tasks(tasks):
-    """Displays the list of tasks."""
     if not tasks:
         print("\nYour to-do list is empty!")
         return
@@ -30,9 +26,8 @@ def view_tasks(tasks):
     print("--------------------------------")
 
 def add_task(tasks):
-    """Adds a new task to the list."""
     task_name = input("Enter the task description: ")
-    if task_name.strip(): # Ensure task is not empty
+    if task_name.strip(): 
         new_task = {"task": task_name, "status": "pending"}
         tasks.append(new_task)
         save_tasks(tasks)
@@ -41,7 +36,6 @@ def add_task(tasks):
         print("\nTask description cannot be empty.")
     
 def delete_task(tasks):
-    """Deletes a task from the list."""
     view_tasks(tasks)
     if not tasks: return
 
@@ -50,7 +44,6 @@ def delete_task(tasks):
         task_number = int(task_number_str)
         
         if 1 <= task_number <= len(tasks):
-            # Store task name before removing for the message
             removed_task = tasks.pop(task_number - 1)
             save_tasks(tasks)
             print(f"\nTask '{removed_task['task']}' deleted successfully.")
@@ -60,7 +53,6 @@ def delete_task(tasks):
         print("\nInvalid input. Please enter a number.")
 
 def update_task(tasks):
-    """Marks a task's status as done."""
     view_tasks(tasks)
     if not tasks: return
     
